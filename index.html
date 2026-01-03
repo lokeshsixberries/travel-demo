@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page | Travel Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <main class="container">
+        <section class="search-section">
+            <h1 class="search-title">Find your perfect getaway</h1>
+            <p class="search-subtitle">Discover amazing destinations, compare prices, and book your next adventure with ease. Search for hotels, vacation rentals, and unique experiences worldwide.</p>
+            <div class="filters-section">
+                <h2 class="filters-title">Search Filters</h2>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Destination
+                        </label>
+                        <select class="filter-select" id="destinationSelect">
+                            <option value="">Anywhere</option>
+                            <option value="paris">Paris, France</option>
+                            <option value="tokyo">Tokyo, Japan</option>
+                            <option value="new-york">New York, USA</option>
+                            <option value="bali">Bali, Indonesia</option>
+                            <option value="rome">Rome, Italy</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <i class="fas fa-calendar-alt"></i>
+                            Check-in
+                        </label>
+                        <input type="date" class="filter-input" id="checkinDate" value="2023-10-15">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <i class="fas fa-calendar-alt"></i>
+                            Check-out
+                        </label>
+                        <input type="date" class="filter-input" id="checkoutDate" value="2023-10-22">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <i class="fas fa-user-friends"></i>
+                            Guests
+                        </label>
+                        <select class="filter-select" id="guestsSelect">
+                            <option value="1">1 guest</option>
+                            <option value="2" selected>2 guests</option>
+                            <option value="3">3 guests</option>
+                            <option value="4">4 guests</option>
+                            <option value="5+">5+ guests</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <i class="fas fa-home"></i>
+                            Property Type
+                        </label>
+                        <select class="filter-select" id="propertyType">
+                            <option value="">All types</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="house">House</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="villa">Villa</option>
+                            <option value="cabin">Cabin</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <i class="fas fa-dollar-sign"></i>
+                            Price Range
+                        </label>
+                        <div class="price-range">
+                            <input type="range" class="price-input" id="priceRange" min="50" max="500" value="200" step="10">
+                            <div class="price-display" id="priceDisplay">$200/night</div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <i class="fas fa-star"></i>
+                            Minimum Rating
+                        </label>
+                        <select class="filter-select" id="minRating">
+                            <option value="0">Any rating</option>
+                            <option value="4">4+ stars</option>
+                            <option value="4.5">4.5+ stars</option>
+                            <option value="5">5 stars only</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <i class="fas fa-bed"></i>
+                            Bedrooms
+                        </label>
+                        <select class="filter-select" id="bedroomsSelect">
+                            <option value="0">Any</option>
+                            <option value="1">1+ bedroom</option>
+                            <option value="2" selected>2+ bedrooms</option>
+                            <option value="3">3+ bedrooms</option>
+                            <option value="4">4+ bedrooms</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                    Search Properties
+                </button>
+            </div>
+        </section>
+        
+        <section class="results-section">
+            <button class="mobile-filters-toggle" id="mobileFiltersToggle">
+                <i class="fas fa-filter"></i>
+                Show Filters
+            </button>
+            
+            <aside class="sidebar" id="sidebarFilters">
+                <div class="sidebar-filter">
+                    <h3 class="sidebar-title">Property Type</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" checked>
+                            <span class="filter-label-text">Apartments</span>
+                            <span class="filter-count">(24)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" checked>
+                            <span class="filter-label-text">Houses</span>
+                            <span class="filter-count">(18)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox">
+                            <span class="filter-label-text">Hotels</span>
+                            <span class="filter-count">(12)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox">
+                            <span class="filter-label-text">Villas</span>
+                            <span class="filter-count">(8)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox">
+                            <span class="filter-label-text">Cabins</span>
+                            <span class="filter-count">(6)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="sidebar-filter">
+                    <h3 class="sidebar-title">Amenities</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" checked>
+                            <span class="filter-label-text">WiFi</span>
+                            <span class="filter-count">(52)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox">
+                            <span class="filter-label-text">Pool</span>
+                            <span class="filter-count">(24)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox">
+                            <span class="filter-label-text">Kitchen</span>
+                            <span class="filter-count">(46)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" checked>
+                            <span class="filter-label-text">Parking</span>
+                            <span class="filter-count">(38)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox">
+                            <span class="filter-label-text">Air conditioning</span>
+                            <span class="filter-count">(41)</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+            
+            <div class="results-content">
+                <div class="results-header">
+                    <div class="results-count">Showing <span id="resultsCount">12</span> properties in <span id="locationText">Paris</span></div>
+                    <div class="sort-options">
+                        <span>Sort by:</span>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="recommended">Recommended</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="property-card">
+                    <div class="property-image" style="background: linear-gradient(to bottom right, #e9ecef, #adb5bd);">
+                        <div class="property-tag">Superhost</div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #6c757d; font-size: 48px;">
+                            <i class="fas fa-home"></i>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <h3 class="property-title">Modern Parisian Apartment</h3>
+                            <div class="property-rating">
+                                <i class="fas fa-star" style="color: #ffc107;"></i>
+                                <span class="rating-value">4.8</span>
+                                <span class="rating-count">(124)</span>
+                            </div>
+                        </div>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Le Marais, Paris, France</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>4 guests</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bed"></i>
+                                <span>2 bedrooms</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bath"></i>
+                                <span>1 bath</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>WiFi</span>
+                            </div>
+                        </div>
+                        <div class="property-footer">
+                            <div class="property-price">
+                                <span class="price-amount">$189</span>
+                                <span class="price-period">per night</span>
+                            </div>
+                            <button class="book-button" onclick="openBookingModal('Modern Parisian Apartment')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="property-card">
+                    <div class="property-image" style="background: linear-gradient(to bottom right, #d4edda, #c3e6cb);">
+                        <div class="property-tag">Best Value</div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #6c757d; font-size: 48px;">
+                            <i class="fas fa-building"></i>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <h3 class="property-title">Luxury Hotel Suite</h3>
+                            <div class="property-rating">
+                                <i class="fas fa-star" style="color: #ffc107;"></i>
+                                <span class="rating-value">4.9</span>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                        </div>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Champs-Élysées, Paris, France</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>2 guests</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bed"></i>
+                                <span>1 bedroom</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bath"></i>
+                                <span>Private bath</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-swimming-pool"></i>
+                                <span>Pool</span>
+                            </div>
+                        </div>
+                        <div class="property-footer">
+                            <div class="property-price">
+                                <span class="price-amount">$245</span>
+                                <span class="price-period">per night</span>
+                            </div>
+                            <button class="book-button" onclick="openBookingModal('Luxury Hotel Suite')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="property-card">
+                    <div class="property-image" style="background: linear-gradient(to bottom right, #d1ecf1, #bee5eb);">
+                        <div class="property-tag">Popular</div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #6c757d; font-size: 48px;">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <h3 class="property-title">Cozy Studio Near Eiffel Tower</h3>
+                            <div class="property-rating">
+                                <i class="fas fa-star" style="color: #ffc107;"></i>
+                                <span class="rating-value">4.7</span>
+                                <span class="rating-count">(203)</span>
+                            </div>
+                        </div>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>7th Arrondissement, Paris, France</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="feature">
+                                <i class="fas fa-user-friends"></i>
+                                <span>2 guests</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bed"></i>
+                                <span>Studio</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bath"></i>
+                                <span>1 bath</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-utensils"></i>
+                                <span>Kitchenette</span>
+                            </div>
+                        </div>
+                        <div class="property-footer">
+                            <div class="property-price">
+                                <span class="price-amount">$129</span>
+                                <span class="price-period">per night</span>
+                            </div>
+                            <button class="book-button" onclick="openBookingModal('Cozy Studio Near Eiffel Tower')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="pagination">
+            <button class="pagination-button active">1</button>
+            <button class="pagination-button">2</button>
+            <button class="pagination-button">3</button>
+            <button class="pagination-button">4</button>
+            <button class="pagination-button">5</button>
+            <button class="pagination-button">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+    
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalPropertyTitle">Book Property</h3>
+                <button class="close-button" onclick="closeBookingModal()">&times;</button>
+            </div>
+            <form class="modal-form" id="bookingForm">
+                <div class="form-group">
+                    <label class="form-label">Property</label>
+                    <input type="text" class="form-input" id="modalPropertyName" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Check-in Date</label>
+                    <input type="date" class="form-input" id="modalCheckin" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Check-out Date</label>
+                    <input type="date" class="form-input" id="modalCheckout" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Number of Guests</label>
+                    <select class="form-input" id="modalGuests" required>
+                        <option value="1">1 guest</option>
+                        <option value="2" selected>2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5 guests</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" id="modalName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" id="modalEmail" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="modal-button">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const priceRange = document.getElementById('priceRange');
+        const priceDisplay = document.getElementById('priceDisplay');
+        const destinationSelect = document.getElementById('destinationSelect');
+        const locationText = document.getElementById('locationText');
+        const searchButton = document.getElementById('searchButton');
+        const resultsCount = document.getElementById('resultsCount');
+        const sortSelect = document.getElementById('sortSelect');
+        const paginationButtons = document.querySelectorAll('.pagination-button');
+        const bookingModal = document.getElementById('bookingModal');
+        const modalPropertyName = document.getElementById('modalPropertyName');
+        const modalPropertyTitle = document.getElementById('modalPropertyTitle');
+        const bookingForm = document.getElementById('bookingForm');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const mobileFiltersToggle = document.getElementById('mobileFiltersToggle');
+        const sidebarFilters = document.getElementById('sidebarFilters');
+        
+        priceRange.addEventListener('input', function() {
+            priceDisplay.textContent = `$${this.value}/night`;
+        });
+        
+        destinationSelect.addEventListener('change', function() {
+            const locationMap = {
+                'paris': 'Paris',
+                'tokyo': 'Tokyo',
+                'new-york': 'New York',
+                'bali': 'Bali',
+                'rome': 'Rome',
+                '': 'various locations'
+            };
+            locationText.textContent = locationMap[this.value] || 'various locations';
+        });
+        
+        searchButton.addEventListener('click', function() {
+            const randomCount = Math.floor(Math.random() * 10) + 8;
+            resultsCount.textContent = randomCount;
+            
+            alert(`Searching properties with your criteria... Found ${randomCount} properties!`);
+        });
+        
+        sortSelect.addEventListener('change', function() {
+            alert(`Results sorted by: ${this.options[this.selectedIndex].text}`);
+        });
+        
+        paginationButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                paginationButtons.forEach(btn => btn.classList.remove('active'));
+                
+                this.classList.add('active');
+                
+                if (this.querySelector('.fa-chevron-right')) {
+                    alert('Loading next page...');
+                } else {
+                    alert(`Loading page ${this.textContent}...`);
+                }
+            });
+        });
+        
+        function openBookingModal(propertyName) {
+            modalPropertyName.value = propertyName;
+            modalPropertyTitle.textContent = `Book: ${propertyName}`;
+            
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const nextWeek = new Date(today);
+            nextWeek.setDate(nextWeek.getDate() + 7);
+            
+            document.getElementById('modalCheckin').value = tomorrow.toISOString().split('T')[0];
+            document.getElementById('modalCheckout').value = nextWeek.toISOString().split('T')[0];
+            
+            bookingModal.style.display = 'flex';
+        }
+        
+        function closeBookingModal() {
+            bookingModal.style.display = 'none';
+        }
+        
+        window.addEventListener('click', function(event) {
+            if (event.target === bookingModal) {
+                closeBookingModal();
+            }
+        });
+        
+        bookingForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const propertyName = modalPropertyName.value;
+            const checkin = document.getElementById('modalCheckin').value;
+            const checkout = document.getElementById('modalCheckout').value;
+            const guests = document.getElementById('modalGuests').value;
+            const name = document.getElementById('modalName').value;
+            const email = document.getElementById('modalEmail').value;
+            
+            alert(`Booking confirmed!\n\nProperty: ${propertyName}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nGuests: ${guests}\nName: ${name}\nEmail: ${email}\n\nConfirmation sent to ${email}`);
+            
+            bookingForm.reset();
+            closeBookingModal();
+        });
+        
+        const today = new Date();
+        const nextWeek = new Date(today);
+        nextWeek.setDate(nextWeek.getDate() + 7);
+        
+        document.getElementById('checkinDate').value = today.toISOString().split('T')[0];
+        document.getElementById('checkoutDate').value = nextWeek.toISOString().split('T')[0];
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        mobileFiltersToggle.addEventListener('click', function() {
+            sidebarFilters.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (sidebarFilters.classList.contains('active')) {
+                this.innerHTML = '<i class="fas fa-times"></i> Hide Filters';
+            } else {
+                this.innerHTML = '<i class="fas fa-filter"></i> Show Filters';
+            }
+        });
+        
+        document.addEventListener('click', function(event) {
+            if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
