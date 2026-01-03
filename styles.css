@@ -163,7 +163,6 @@
             background: white;
             border-radius: var(--radius);
             padding: 32px;
-            box-shadow: var(--shadow-lg);
             margin-top: 40px;
             position: relative;
             z-index: 10;
@@ -322,14 +321,12 @@
             background: white;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
         }
         
         .promo-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
         }
         
         .card-badge {
@@ -469,7 +466,6 @@
             border-radius: 8px;
             text-align: center;
             min-width: 80px;
-            box-shadow: var(--shadow);
         }
         
         .timer-value {
@@ -498,7 +494,6 @@
             background: white;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
         }
         
         .deal-badge {
