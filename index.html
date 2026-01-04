@@ -3,339 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel365.com</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Travel Booking</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container">            
-            <div class="hero-content">
-                <h1 class="hero-title">Millions of Hotels.<br>One simple search.</h1>
-                <p class="hero-subtitle">Search and book the best hotels worldwide with exclusive deals and a best price guarantee.</p>
-            </div>
+    <header>
+        <div class="logo">Logo</div>
+        <div class="header-actions">
+            <span class="heart-icon">♡</span>
+            <button class="manage-btn">Manage Booking</button>
         </div>
     </header>
-    
-    <div class="container">
-        <div class="search-widget">
-            <div class="widget-tabs">
-                <button class="tab"><i class="fas fa-hotel"></i> Hotels</button>
+
+    <section class="hero" style="padding-top: 20px;">
+        <h1>Millions of cheap flights. One simple search</h1>
+        
+        <div class="booking-form">
+            <h2>Book Accommodations</h2>
+            
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Where to?">
             </div>
             
-            <form class="search-form" id="searchForm">
-                <div class="form-group">
-                    <label class="form-label">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Where to?
-                    </label>
-                    <input type="text" class="form-control" placeholder="Destination, city, or region" required>
-                    <div class="form-note">
-                        <i class="fas fa-info-circle"></i>
-                        Top destinations with free cancellation
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">
-                        <i class="fas fa-calendar-alt"></i>
-                        Check-in & Check-out
-                    </label>
-                    <div class="date-group">
-                        <input type="date" class="form-control date-input" id="checkinDate" required>
-                        <input type="date" class="form-control date-input" id="checkoutDate" required>
-                    </div>
-                    <div class="form-note">
-                        <i class="fas fa-clock"></i>
-                        Flexible dates available
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">
-                        <i class="fas fa-user-friends"></i>
-                        Guests
-                    </label>
-                    <select class="form-control" required>
-                        <option>1 guest, 1 room</option>
-                        <option selected>2 guests, 1 room</option>
-                        <option>2 guests, 2 rooms</option>
-                        <option>3 guests, 2 rooms</option>
-                        <option>4+ guests, multiple rooms</option>
-                    </select>
-                    <div class="form-note">
-                        <i class="fas fa-utensils"></i>
-                        Bed & breakfast included
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">
-                        <i class="fas fa-tag"></i>
-                        Property Type
-                    </label>
-                    <select class="form-control">
-                        <option>All types</option>
-                        <option selected>Hotels</option>
-                        <option>Apartments</option>
-                        <option>Resorts</option>
-                        <option>Villas</option>
-                    </select>
-                    <div class="form-note">
-                        <i class="fas fa-star"></i>
-                        4+ star properties recommended
-                    </div>
-                </div>
-                
-                <button type="submit" class="search-btn">
-                    <i class="fas fa-search"></i>
-                    Search
-                </button>
-            </form>
-        </div>
-    </div>
-    
-    <!-- Promo Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div>
-                    <h2 class="section-title">Grab these promo deals</h2>
-                    <p class="section-subtitle">Limited time offers with exclusive discounts</p>
-                </div>
-                <a href="#" class="view-all">
-                    View all deals
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Check-in & Check-out">
             </div>
             
-            <div class="promo-grid">
-                <div class="promo-card">
-                    <div class="card-badge">16:9</div>
-                    <div class="card-image gradient-1">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 48px;">
-                            <i class="fas fa-umbrella-beach"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Beachfront Paradise Resort</h3>
-                        <div class="card-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Bali, Indonesia
-                        </div>
-                        <div class="card-rating">
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <span class="rating-value">4.9</span>
-                            <span class="rating-count">(428 reviews)</span>
-                        </div>
-                        <div class="card-footer">
-                            <div class="card-price">
-                                <span class="price-amount">$189</span>
-                                <span class="price-period">per night</span>
-                            </div>
-                            <button class="btn-book">
-                                Book Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="promo-card">
-                    <div class="card-badge">FLASH DEAL</div>
-                    <div class="card-image gradient-2">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 48px;">
-                            <i class="fas fa-building"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Luxury City Center Hotel</h3>
-                        <div class="card-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Paris, France
-                        </div>
-                        <div class="card-rating">
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star-half-alt" style="color: #fbbf24;"></i>
-                            <span class="rating-value">4.7</span>
-                            <span class="rating-count">(312 reviews)</span>
-                        </div>
-                        <div class="card-footer">
-                            <div class="card-price">
-                                <span class="price-amount">$245</span>
-                                <span class="price-period">per night</span>
-                            </div>
-                            <button class="btn-book">
-                                Book Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="promo-card">
-                    <div class="card-badge">16:9</div>
-                    <div class="card-image gradient-3">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 48px;">
-                            <i class="fas fa-mountain"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Mountain View Chalet</h3>
-                        <div class="card-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Swiss Alps, Switzerland
-                        </div>
-                        <div class="card-rating">
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <i class="fas fa-star" style="color: #fbbf24;"></i>
-                            <span class="rating-value">4.9</span>
-                            <span class="rating-count">(189 reviews)</span>
-                        </div>
-                        <div class="card-footer">
-                            <div class="card-price">
-                                <span class="price-amount">$329</span>
-                                <span class="price-period">per night</span>
-                            </div>
-                            <button class="btn-book">
-                                Book Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Add guests">
             </div>
             
-            <div class="flash-deals">
-                <div class="flash-header">
-                    <h2 class="flash-title">Flash deals near you</h2>
-                </div>
-                
-                <div class="deals-grid">
-                    <div class="deal-card">
-                        <div class="deal-image gradient-4"></div>
-                        <div class="deal-content">
-                            <div class="deal-duration">1 DAY • MALAGA</div>
-                            <h3 class="deal-name">Hotel Malaga Premium</h3>
-                            <div class="deal-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                Costa del Sol, Spain
-                            </div>
-                            <div class="deal-price">$201</div>
-                        </div>
-                    </div>
-                    
-                    <div class="deal-card">
-                        <div class="deal-image gradient-5"></div>
-                        <div class="deal-content">
-                            <div class="deal-duration">2 DAYS • MALAGA</div>
-                            <h3 class="deal-name">Beach Resort & Spa</h3>
-                            <div class="deal-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                Malaga Coast, Spain
-                            </div>
-                            <div class="deal-price">$189</div>
-                        </div>
-                    </div>
-                    
-                    <div class="deal-card">
-                        <div class="deal-image gradient-6"></div>
-                        <div class="deal-content">
-                            <div class="deal-duration">3 DAYS • MALAGA</div>
-                            <h3 class="deal-name">City View Boutique Hotel</h3>
-                            <div class="deal-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                Malaga City Center, Spain
-                            </div>
-                            <div class="deal-price">$245</div>
-                        </div>
-                    </div>
-                    
-                    <div class="deal-card">
-                        <div class="deal-image gradient-1"></div>
-                        <div class="deal-content">
-                            <div class="deal-duration">4 DAYS • MALAGA</div>
-                            <h3 class="deal-name">Luxury Golf & Suites</h3>
-                            <div class="deal-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                Malaga Golf Resort, Spain
-                            </div>
-                            <div class="deal-price">$299</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="options">
+                <span style="color: white; margin-right: 10px;">Top options:</span>
+                <button class="option-btn">Free cancellation</button>
+                <button class="option-btn">Bed & breakfast</button>
             </div>
+            
+            <button class="submit-btn">
+                <span>✈</span> Let's go
+            </button>
         </div>
     </section>
-    
-    <script>
-        const today = new Date();
-        const nextWeek = new Date(today);
-        nextWeek.setDate(nextWeek.getDate() + 7);
-        
-        document.getElementById('checkinDate').value = today.toISOString().split('T')[0];
-        document.getElementById('checkoutDate').value = nextWeek.toISOString().split('T')[0];
-        
-        function updateTimer() {
-            const target = new Date();
-            target.setDate(target.getDate() + 1); 
+
+    <!-- Promo Deals -->
+    <section class="promo-section">
+        <h2>Grab these promo deals</h2>
+        <div class="promo-grid">
+            <div class="promo-card">16:9</div>
+            <div class="promo-card">16:9</div>
+            <div class="promo-card">16:9</div>
+        </div>
+    </section>
+
+    <!-- Flash Deals -->
+    <section class="flash-deals">
+        <h2>Flash deals near you</h2>
+        <div class="deals-grid">
+            <div class="deal-card">
+                <div class="deal-badge">
+                    <span class="badge badge-price">₹ 59,945</span>
+                    <span class="badge badge-discount">-20%</span>
+                </div>
+            </div>
             
-            const now = new Date();
-            const diff = target - now;
+            <div class="deal-card">
+                <div class="deal-badge">
+                    <span class="badge badge-price">₹ 89,695</span>
+                    <span class="badge badge-discount">-20%</span>
+                </div>
+                <div class="deal-location">Goa • 4 nights</div>
+            </div>
             
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            <div class="deal-card">
+                <div class="deal-badge">
+                    <span class="badge badge-price">₹ 59,945</span>
+                    <span class="badge badge-discount">-20%</span>
+                </div>
+            </div>
             
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        updateTimer();
-        setInterval(updateTimer, 1000);
-        
-        document.getElementById('searchForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const destination = this.querySelector('input[placeholder="Destination, city, or region"]').value;
-            alert(`Searching for accommodations in ${destination}...`);
-        });
-        
-        const tabs = document.querySelectorAll('.tab');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                tabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-        
-        const bookButtons = document.querySelectorAll('.btn-book');
-        bookButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const cardTitle = this.closest('.promo-card').querySelector('.card-title').textContent;
-                alert(`Booking ${cardTitle}...`);
-            });
-        });
-        
-        const promoCards = document.querySelectorAll('.promo-card');
-        promoCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-            });
+            <div class="deal-card">
+                <div class="deal-badge">
+                    <span class="badge badge-price">₹ 59,945</span>
+                    <span class="badge badge-discount">-20%</span>
+                </div>
+            </div>
             
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-    </script>
+            <div class="nav-arrow">›</div>
+        </div>
+    </section>
 </body>
 </html>
